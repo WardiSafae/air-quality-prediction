@@ -1,0 +1,43 @@
+# Fichiers de données
+data/raw/*.csv
+data/raw/air_quality_*.csv
+data/processed/*.csv
+data/checkpoints/*.json
+
+# Fichiers de logs
+logs/*.log
+
+# Modèles sauvegardés
+models/centralized/*.pkl
+models/federated/*.pkl
+
+# Cache Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Environnement virtuel
+venv/
+env/
+.venv/
+ENV/
+
+# Jupyter Notebooks 
+# notebooks/*.ipynb
+
+# Visualisations générées
+# visualizations/*.png
+
+# Fichiers systèmes
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Fichiers Flower
+src/federated/flower/__pycache__/
+flower_*.log

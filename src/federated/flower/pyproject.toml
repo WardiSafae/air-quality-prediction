@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "air-quality-federated"
+version = "1.0.0"
+description = "Federated Learning for Air Quality Prediction in Moroccan Cities"
+license = {file = "LICENSE"}  # ← AJOUTEZ CETTE LIGNE
+dependencies = [
+    "flwr[simulation]>=1.28.0",
+    "scikit-learn>=1.6.1",
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+
+[tool.flwr.app]
+publisher = "votre-nom"
+fab-format-version = 1
+flwr-version-target = "1.30.0"
+
+[tool.flwr.app.components]
+serverapp = "server_app:app"
+clientapp = "client_app:app"
+
+[tool.flwr.app.config]
+num-server-rounds = 10
+num-clients = 6
+
+# Ajoutez ceci pour forcer le nombre de clients en simulation
+[tool.flwr.app.config.simulation]
+num-supernodes = 6

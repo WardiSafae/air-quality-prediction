@@ -1,0 +1,7 @@
+cd C:\Users\safawardi\Documents\IA2_bdsi\projet_air_quality
+python data_preparation.py
+conda activate vision-env
+python data_preparation.py
+python model_building.py
+python federated_learning.py
+doskey /history > commandes.txt
